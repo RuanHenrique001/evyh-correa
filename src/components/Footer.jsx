@@ -104,7 +104,7 @@ export default function Footer() {
 
       <div className={styles.copyright}>
         <p>© {new Date().getFullYear()} Evyh Correa. Todos os direitos reservados.</p>
-        <p>Desenvolvido com ♥ por <a href="https://www.linkedin.com/in/ruan-cardozo/" target="_blank" rel="noopener noreferrer" className={styles.credit}>Ruan Cardozo</a></p>
+        <p>Desenvolvido com ♥ por <a href="https://www.linkedin.com/in/ruan-henrique-p%C3%A1dua-ferreira-95303156/" target="_blank" rel="noopener noreferrer" className={styles.credit}>Ruan Ferreira</a></p>
       </div>
     </footer>  );
 }
