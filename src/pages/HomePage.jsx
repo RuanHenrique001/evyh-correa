@@ -42,9 +42,8 @@ export default function HomePage() {
             className={styles.serviceCard}
           >
             <img src={ciliosMega} alt="Megabrasileiro" className={styles.serviceImage} />
-            <h3 className={styles.serviceTitle}>Volume Megabrasileiro</h3>
-            <p className={styles.serviceDescription}>Volume intenso e glamouroso para um olhar deslumbrante</p>
-            <a href="#saiba-mais" className={styles.serviceLink}>Saiba Mais</a>
+            <h3 className={styles.serviceTitle}>Volume Megabrasileiro</h3>            <p className={styles.serviceDescription}>Volume intenso e glamouroso para um olhar deslumbrante</p>
+            <a href="https://apnt.app/l/jagPM6" target="_blank" rel="noopener noreferrer" className={styles.serviceLink}>Agende Agora</a>
           </motion.div>
           <motion.div 
             whileHover={{ scale: 1.05 }}
@@ -53,16 +52,16 @@ export default function HomePage() {
             <img src={ciliosFox} alt="Fox" className={styles.serviceImage} />
             <h3 className={styles.serviceTitle}>Volume Fox</h3>
             <p className={styles.serviceDescription}>Efeito raposa para um olhar marcante e sedutor</p>
-            <a href="#saiba-mais" className={styles.serviceLink}>Saiba Mais</a>
+            <a href="https://apnt.app/l/jagPM6" target="_blank" rel="noopener noreferrer" className={styles.serviceLink}>Agende Agora</a>
           </motion.div>
           <motion.div 
             whileHover={{ scale: 1.05 }}
             className={styles.serviceCard}
           >
-            <img src={ciliosEgipicio} alt="Egípicio" className={styles.serviceImage} />
+            <img src={ciliosEgipicio} alt="Egípício" className={styles.serviceImage} />
             <h3 className={styles.serviceTitle}>Volume Egípicio</h3>
             <p className={styles.serviceDescription}>Alongamento com efeito esfumado e misterioso</p>
-            <a href="#saiba-mais" className={styles.serviceLink}>Saiba Mais</a>
+            <a href="https://apnt.app/l/jagPM6" target="_blank" rel="noopener noreferrer" className={styles.serviceLink}>Agende Agora</a>
           </motion.div>
         </div>
       </section>      {/* Depoimentos */}
