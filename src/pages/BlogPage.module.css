@@ -1,0 +1,277 @@
+.hero {
+  position: relative;
+  height: 40vh;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.heroOverlay {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.6));
+}
+
+.heroContent {
+  position: relative;
+  z-index: 10;
+  text-align: center;
+}
+
+.heroTitle {
+  font-size: 2.5rem;
+  font-family: serif;
+  color: white;
+  margin-bottom: 1rem;
+}
+
+.heroSubtitle {
+  font-size: 1.125rem;
+  color: var(--secondary-color);
+}
+
+.section {
+  padding: 4rem 1rem;
+}
+
+.container {
+  max-width: 72rem;
+  margin: 0 auto;
+}
+
+.featuredGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  margin-bottom: 4rem;
+}
+
+.recentGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+
+.article {
+  background-color: white;
+  border-radius: 0.5rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transition: transform 0.2s ease;
+}
+
+.article:hover {
+  transform: translateY(-4px);
+}
+
+.articleImage {
+  width: 100%;
+  height: 14rem;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.article:hover .articleImage {
+  transform: scale(1.05);
+}
+
+.articleContent {
+  padding: 1.5rem;
+}
+
+.articleMeta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.875rem;
+  color: #666;
+  margin-bottom: 0.75rem;
+}
+
+.articleTitle {
+  font-size: 1.5rem;
+  font-family: serif;
+  color: var(--primary-color);
+  margin-bottom: 0.75rem;
+}
+
+.recentGrid .articleTitle {
+  font-size: 1.25rem;
+}
+
+.articleExcerpt {
+  color: #333;
+  margin-bottom: 1rem;
+  line-height: 1.6;
+}
+
+.articleFooter {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.readMore {
+  color: var(--primary-color);
+  font-weight: 600;
+  text-decoration: none;
+  transition: opacity 0.2s ease;
+}
+
+.readMore:hover {
+  opacity: 0.8;
+}
+
+.readTime {
+  font-size: 0.875rem;
+  color: #666;
+}
+
+.categories {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  margin-bottom: 2rem;
+}
+
+.categoryButton {
+  padding: 0.5rem 1rem;
+  border: 1px solid var(--primary-color);
+  border-radius: 2rem;
+  color: var(--primary-color);
+  background: transparent;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.categoryButton:hover,
+.categoryButton.active {
+  background-color: var(--primary-color);
+  color: white;
+}
+
+.newsletter {
+  background-color: var(--secondary-color);
+  padding: 4rem 1rem;
+  text-align: center;
+}
+
+.newsletterContent {
+  max-width: 48rem;
+  margin: 0 auto;
+}
+
+.newsletterTitle {
+  font-size: 2rem;
+  font-family: serif;
+  color: var(--primary-color);
+  margin-bottom: 1.5rem;
+}
+
+.newsletterDescription {
+  color: #333;
+  margin-bottom: 2rem;
+}
+
+.newsletterForm {
+  max-width: 28rem;
+  margin: 0 auto;
+  display: flex;
+  gap: 1rem;
+}
+
+.newsletterInput {
+  flex: 1;
+  padding: 0.75rem 1rem;
+  border: 1px solid #ccc;
+  border-radius: 0.5rem;
+}
+
+.newsletterInput:focus {
+  outline: none;
+  border-color: var(--primary-color);
+}
+
+.newsletterButton {
+  padding: 0.75rem 1.5rem;
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  transition: opacity 0.2s ease;
+}
+
+.newsletterButton:hover {
+  opacity: 0.9;
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-top: 3rem;
+}
+
+.pageButton {
+  padding: 0.5rem 1rem;
+  border: 1px solid var(--primary-color);
+  border-radius: 0.25rem;
+  color: var(--primary-color);
+  background: transparent;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.pageButton:hover,
+.pageButton.active {
+  background-color: var(--primary-color);
+  color: white;
+}
+
+@media (max-width: 1024px) {
+  .featuredGrid,
+  .recentGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .newsletterForm {
+    max-width: 28rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .featuredGrid,
+  .recentGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .categories {
+    flex-wrap: wrap;
+  }
+
+  .categoryButton {
+    flex: 1;
+    min-width: calc(50% - 0.5rem);
+    text-align: center;
+  }
+
+  .newsletterForm {
+    flex-direction: column;
+  }
+
+  .newsletterButton {
+    width: 100%;
+  }
+
+  .hero {
+    height: 30vh;
+  }
+
+  .heroTitle {
+    font-size: 2rem;
+  }
+}

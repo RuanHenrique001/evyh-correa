@@ -1,0 +1,209 @@
+.container {
+  min-height: 100vh;
+}
+
+.heroSection {
+  position: relative;
+  height: 80vh;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.heroContent {
+  background-color: rgba(0, 0, 0, 0.6);
+  padding: 2rem;
+  border-radius: 0.5rem;
+}
+
+.heroTitle {
+  font-size: 2.5rem;
+  font-family: serif;
+  color: var(--primary-color);
+  margin-bottom: 1rem;
+}
+
+.heroText {
+  font-size: 1.125rem;
+  color: white;
+  margin-bottom: 1.5rem;
+}
+
+.heroButton {
+  background-color: var(--primary-color);
+  color: black;
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.75rem;
+  font-weight: 600;
+  display: inline-block;
+  text-decoration: none;
+}
+
+.section {
+  padding: 4rem 2rem;
+}
+
+.section.white {
+  background-color: white;
+  color: black;
+}
+
+.section.secondary {
+  background-color: var(--secondary-color);
+  color: black;
+}
+
+.sectionTitle {
+  font-size: 1.875rem;
+  text-align: center;
+  font-family: serif;
+  color: var(--primary-color);
+  margin-bottom: 3rem;
+}
+
+.servicesGrid {
+  display: grid;
+  gap: 2rem;
+}
+
+@media (min-width: 768px) {
+  .servicesGrid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.serviceCard {
+  border: 2px solid var(--primary-color);
+  padding: 1.5rem;
+  border-radius: 0.5rem;
+  transition: transform 0.3s;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.serviceCard:hover {
+  transform: scale(1.05);
+}
+
+.serviceImage {
+  width: 100%;
+  height: 300px;
+  margin-bottom: 1rem;
+  border-radius: 0.25rem;
+  object-fit: cover;
+  object-position: center;
+}
+
+.serviceTitle {
+  font-weight: bold;
+  font-size: 1.125rem;
+}
+
+.serviceDescription {
+  font-size: 0.875rem;
+}
+
+.serviceLink {
+  display: inline-block;
+  margin-top: 1rem;
+  color: var(--primary-color);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.testimonial {
+  background-color: white;
+  padding: 1.5rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  border: 1px solid var(--primary-color);
+}
+
+.testimonialText {
+  font-size: 0.875rem;
+  font-style: italic;
+  margin-bottom: 1rem;
+}
+
+.testimonialAuthor {
+  font-weight: bold;
+}
+
+.instagramGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+@media (min-width: 768px) {
+  .instagramGrid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.instagramItem {
+  position: relative;
+  border-radius: 0.5rem;
+  overflow: hidden;
+  aspect-ratio: 1;
+}
+
+.instagramImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 0.5rem;
+}
+
+.instagramOverlay {
+  position: absolute;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.instagramItem:hover .instagramOverlay {
+  opacity: 1;
+}
+
+.instagramIcon {
+  color: white;
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+.instagramText {
+  color: white;
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.textCenter {
+  text-align: center;
+}
+
+.mt8 {
+  margin-top: 2rem;
+}
+
+.instagramButton {
+  display: inline-block;
+  background-color: var(--primary-color);
+  color: white;
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.75rem;
+  font-weight: 600;
+  text-decoration: none;
+}

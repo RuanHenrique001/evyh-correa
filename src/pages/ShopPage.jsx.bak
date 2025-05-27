@@ -1,0 +1,187 @@
+import { motion } from 'framer-motion';
+import { useState } from 'react';
+import styles from './ShopPage.module.css';
+
+const categories = ['Todos', 'Cílios', 'Sobrancelhas', 'Cuidados', 'Acessórios'];
+
+const products = [
+  {
+    id: 1,
+    name: 'Kit Manutenção Cílios',
+    price: 89.90,
+    image: 'https://via.placeholder.com/300x300',
+    description: 'Kit completo para cuidados diários com seus cílios.',
+    category: 'kits'
+  },
+  {
+    id: 2,
+    name: 'Escova para Cílios',
+    price: 29.90,
+    image: 'https://via.placeholder.com/300x300',
+    description: 'Escova especial para limpeza e manutenção dos cílios.',
+    category: 'acessorios'
+  },
+  {
+    id: 3,
+    name: 'Sérum para Crescimento',
+    price: 119.90,
+    image: 'https://via.placeholder.com/300x300',
+    description: 'Sérum estimulante para crescimento natural dos cílios.',
+    category: 'tratamentos'
+  },
+  {
+    id: 4,
+    name: 'Shampoo para Cílios',
+    price: 49.90,
+    image: 'https://via.placeholder.com/300x300',
+    description: 'Shampoo específico para limpeza de cílios com extensão.',
+    category: 'limpeza'
+  },
+  {
+    id: 5,
+    name: 'Máscara Protetora',
+    price: 39.90,
+    image: 'https://via.placeholder.com/300x300',
+    description: 'Máscara para dormir e proteger seus cílios.',
+    category: 'acessorios'
+  },
+  {
+    id: 6,
+    name: 'Kit Iniciante',
+    price: 149.90,
+    image: 'https://via.placeholder.com/300x300',
+    description: 'Kit completo para iniciantes nos cuidados com cílios.',
+    category: 'kits'
+  }
+];
+
+const categories = [
+  { id: 'todos', name: 'Todos' },
+  { id: 'kits', name: 'Kits' },
+  { id: 'acessorios', name: 'Acessórios' },
+  { id: 'tratamentos', name: 'Tratamentos' },
+  { id: 'limpeza', name: 'Limpeza' }
+];
+
+export default function ShopPage() {
+  const [activeCategory, setActiveCategory] = useState('todos');
+  const [searchTerm, setSearchTerm] = useState('');
+
+  const filteredProducts = products.filter(product => {
+    const matchesCategory = activeCategory === 'todos' || product.category === activeCategory;
+    const matchesSearch = product.name.toLowerCase().includes(searchTerm.toLowerCase());
+    return matchesCategory && matchesSearch;
+  });
+
+  return (
+    <div className="min-h-screen bg-white">
+      {/* Hero Section */}
+      <section className="relative h-[40vh] bg-cover bg-center flex items-center justify-center" 
+               style={{backgroundImage: 'url("https://via.placeholder.com/1200x400")'}}>
+        <div className="bg-black bg-opacity-50 w-full h-full absolute" />
+        <motion.div 
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          className="relative z-10 text-center"
+        >
+          <h1 className="text-4xl font-serif text-white mb-4">Nossa Loja</h1>
+          <p className="text-lg text-secondary">Produtos profissionais para seus cílios</p>
+        </motion.div>
+      </section>
+
+      {/* Filtros e Busca */}
+      <section className="bg-secondary py-8 px-4">
+        <div className="max-w-6xl mx-auto">
+          <div className="flex flex-col md:flex-row justify-between items-center gap-4">
+            <div className="flex gap-4 flex-wrap justify-center">
+              {categories.map(category => (
+                <button
+                  key={category.id}
+                  onClick={() => setActiveCategory(category.id)}
+                  className={`px-4 py-2 rounded-full transition-colors ${
+                    activeCategory === category.id
+                      ? 'bg-primary text-white'
+                      : 'bg-white text-primary border border-primary hover:bg-primary hover:text-white'
+                  }`}
+                >
+                  {category.name}
+                </button>
+              ))}
+            </div>
+            <div className="w-full md:w-64">
+              <input
+                type="text"
+                placeholder="Buscar produtos..."
+                value={searchTerm}
+                onChange={(e) => setSearchTerm(e.target.value)}
+                className="w-full px-4 py-2 rounded-lg border border-gray-300 focus:outline-none focus:border-primary"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Produtos */}
+      <section className="py-16 px-8">
+        <div className="max-w-6xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {filteredProducts.map((product) => (
+              <motion.div
+                key={product.id}
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                whileHover={{ scale: 1.02 }}
+                className="bg-white rounded-lg shadow-lg overflow-hidden"
+              >
+                <img 
+                  src={product.image} 
+                  alt={product.name}
+                  className="w-full h-64 object-cover"
+                />
+                <div className="p-6">
+                  <h3 className="text-xl font-serif text-primary mb-2">{product.name}</h3>
+                  <p className="text-gray-700 mb-4">{product.description}</p>
+                  <div className="flex justify-between items-center">
+                    <span className="text-xl font-semibold text-primary">
+                      R$ {product.price.toFixed(2)}
+                    </span>
+                    <button className="bg-primary text-white px-4 py-2 rounded-lg hover:bg-opacity-90 transition-colors">
+                      Adicionar ao Carrinho
+                    </button>
+                  </div>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Informações Adicionais */}
+      <section className="bg-secondary py-16 px-8">
+        <div className="max-w-4xl mx-auto grid md:grid-cols-3 gap-8 text-center">
+          <div>
+            <div className="text-4xl text-primary mb-4">
+              <i className="fas fa-truck"></i>
+            </div>
+            <h3 className="font-serif text-primary mb-2">Entrega Segura</h3>
+            <p className="text-gray-700">Envio para todo o Brasil com proteção garantida</p>
+          </div>
+          <div>
+            <div className="text-4xl text-primary mb-4">
+              <i className="fas fa-lock"></i>
+            </div>
+            <h3 className="font-serif text-primary mb-2">Pagamento Seguro</h3>
+            <p className="text-gray-700">Diversas formas de pagamento com total segurança</p>
+          </div>
+          <div>
+            <div className="text-4xl text-primary mb-4">
+              <i className="fas fa-headset"></i>
+            </div>
+            <h3 className="font-serif text-primary mb-2">Suporte</h3>
+            <p className="text-gray-700">Atendimento personalizado para suas dúvidas</p>
+          </div>
+        </div>
+      </section>
+    </div>
+  );
+}
