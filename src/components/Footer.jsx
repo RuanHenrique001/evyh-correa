@@ -35,10 +35,9 @@ export default function Footer() {
           <div className={styles.contactInfo}>            <p>
               <strong>Horário de Funcionamento:</strong><br />
               Das 8 às 18h de segunda-feira a sábado
-            </p>
-            <p>
+            </p>            <p>
               <strong>Endereço:</strong><br />
-              Av Coronel marciano, n° 252 - Lorena/SP
+              Av Coronel marciano, n° 248 - Lorena/SP
             </p>
           </div>
         </div>

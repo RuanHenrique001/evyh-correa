@@ -64,7 +64,7 @@ export default function ContactPage() {
                     </svg>
                   </div>
                   <div className={styles.infoContent}>                    <h3>Localização</h3>
-                    <p>Av Coronel marciano, n° 252</p>
+                    <p>Av Coronel marciano, n° 248</p>
                     <p>Lorena - SP</p>
                   </div>
                 </div>
@@ -227,7 +227,7 @@ export default function ContactPage() {
         <div className={styles.wrapper}>
           <div className={styles.mapContainer}>
             <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3673.674211121077!2d-45.12912472559225!3d-22.967048139811184!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ccc4b0be6f2111%3A0x4788a1b627c216b9!2sAv.%20Cel.%20Marciano%2C%20252%20-%20Centro%2C%20Lorena%20-%20SP%2C%2012600-090!5e0!3m2!1spt-BR!2sbr!4v1684884013583!5m2!1spt-BR!2sbr"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3673.672937631902!2d-45.12917182559225!3d-22.967084739811196!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ccc4b0be6f2111%3A0x4788a1b627c216b9!2sAv.%20Cel.%20Marciano%2C%20248%20-%20Centro%2C%20Lorena%20-%20SP%2C%2012600-090!5e0!3m2!1spt-BR!2sbr!4v1684884013583!5m2!1spt-BR!2sbr"
               className={styles.map}
               allowFullScreen=""
               loading="lazy"
